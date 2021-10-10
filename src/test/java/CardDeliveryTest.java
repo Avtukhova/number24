@@ -12,6 +12,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.exactText;
 import org.junit.jupiter.api.BeforeEach;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 public class CardDeliveryTest {
@@ -20,6 +22,7 @@ public class CardDeliveryTest {
     void setUp() {
         Configuration.browser = "chrome";
     }
+
 
     @Test
     public void shouldCardDelivery() {
