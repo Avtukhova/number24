@@ -18,22 +18,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CardDeliveryTest {
 
-    @BeforeEach
-    void setUp() {
-        Configuration.browser = "chrome";
-    }
-
-
-    @Test
+     @Test
     public void shouldCardDelivery() {
-      //  open("http://localhost:9999");
-     //   $("[class='input__control'][type='text']").setValue("Воронеж");
-      //  $("[class='calendar-input__native-control'][type='date']").setValue("20.10.2021");
-       // $("[class='input__control'][name='name']").setValue("Елена Иванова");
-       // $("[class='input__control'][type='tel']").setValue("+79501055555");
-      //  $("[class='checkbox__text'][role='presentation']").click();
-      //  $(Selectors.byText("Забронировать")).click();
-       // $(Selectors.withText("Успешно")).shouldBe (visible, Duration.ofSeconds(15));
+       open("http://localhost:9999");
+       $("[class='input__control'][type='text']").setValue("Воронеж");
+       $("[class='calendar-input__native-control'][type='date']").setValue("20.10.2021");
+       $("[class='input__control'][name='name']").setValue("Елена Иванова");
+       $("[class='input__control'][type='tel']").setValue("+79501055555");
+       $("[class='checkbox__text'][role='presentation']").click();
+       $(Selectors.byText("Забронировать")).click();
+       $(Selectors.withText("Успешно")).shouldBe (visible, Duration.ofSeconds(15));
 
     }
 
