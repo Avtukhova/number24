@@ -28,7 +28,7 @@ public class CardDeliveryTest {
         $("[class='input__control'][type='text']").setValue("Воронеж");
         LocalDate today = LocalDate.now();
         LocalDate desiredDate = today.plusDays(3);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         String appointmentDate = desiredDate.format(formatter);
         $("[data-test-id=date] input").doubleClick();
         $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
@@ -39,7 +39,7 @@ public class CardDeliveryTest {
         $(Selectors.byText("Забронировать")).click();
         $(Selectors.withText("Успешно")).shouldBe(visible, Duration.ofSeconds(15));
         //$(Selectors.withText("Встреча успешно забронирована")).shouldBe(visible);
-        $("[div.notification__content]").shouldHave(Condition.exactText("Встреча успешно забронирована на " + appointmentDate));
+        $("[data-test-id='notification'] .notification__content").shouldHave(Condition.exactText("Встреча успешно забронирована на " + appointmentDate));
 
     }
 
