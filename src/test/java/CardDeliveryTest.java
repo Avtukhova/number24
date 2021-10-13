@@ -16,6 +16,7 @@ import static com.codeborne.selenide.Condition.exactText;
 
 import org.junit.jupiter.api.BeforeEach;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 
@@ -37,6 +38,8 @@ public class CardDeliveryTest {
         $("[class='checkbox__text'][role='presentation']").click();
         $(Selectors.byText("Забронировать")).click();
         $(Selectors.withText("Успешно")).shouldBe(visible, Duration.ofSeconds(15));
+        //$(Selectors.withText("Встреча успешно забронирована")).shouldBe(visible);
+        $("[div.notification__content]").shouldHave(Condition.exactText("Встреча успешно забронирована на " + appointmentDate));
 
     }
 
